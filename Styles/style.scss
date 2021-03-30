@@ -14,7 +14,6 @@
 }
 
 @import "_variables.scss";
-@import "_media_queries.scss";
 
 .grid {
   display: grid;
@@ -466,3 +465,5 @@
     font-size: 1.4rem;
   }
 }
+
+@import "_media_queries.scss";
