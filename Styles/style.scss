@@ -1,0 +1,468 @@
+.body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@import "_variables.scss";
+@import "_media_queries.scss";
+
+.grid {
+  display: grid;
+}
+
+.btn {
+  padding: 0.5rem 2.5rem;
+  border-radius: 2px;
+  font-size: 0.9rem;
+  color: #eee;
+  background-color: $orange;
+  font-weight: 600;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border-style: unset;
+  outline-style: none;
+  cursor: pointer;
+  &:hover {
+    @include links-hover;
+  }
+}
+
+.grid-items__button {
+  margin: 1rem 0;
+  justify-content: center;
+}
+
+.text {
+  z-index: 1;
+  color: #eee;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.gray {
+  background-color: $gray;
+}
+
+.grid-items {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas:
+    "header header header header"
+    "cool-glasses  cool-glasses cool-macbook cool-imac"
+    "cool-hacking cool-bullshit cool-bullshit cool-workspace"
+    "cool-notebook cool-code cool-timer cool-workspace";
+  gap: 5px;
+
+  .header {
+    position: relative;
+    grid-area: header;
+    height: 50vh;
+    width: 100%;
+    background-image: url("../Img/0-header.jpg");
+
+    @include bg-image-style;
+    @include black-style;
+
+    .header__content {
+      z-index: 1;
+      .header__title {
+        color: #eee;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        cursor: pointer;
+      }
+
+      .header__links {
+        text-align: center;
+        .header__link {
+          text-decoration: none;
+          margin-right: 1rem;
+          font-weight: 600;
+          transition: 0.6s;
+          @include links-hover;
+        }
+      }
+    }
+  }
+
+  .cool-macbook {
+    background-image: url("../Img/2.jpg");
+    grid-area: cool-macbook;
+    height: 20vh;
+    position: relative;
+    transition: 0.3s;
+    @include bg-image-style;
+    @include dark-style;
+    @include hover-style;
+  }
+
+  /*   .cool-macbook:hover {
+    color: $orange;
+    cursor: pointer;
+    background-color: black;
+  } */
+
+  .cool-glasses {
+    background-image: url("../Img/1.jpg");
+    grid-area: cool-glasses;
+    height: 20vh;
+    position: relative;
+    transition: 0.3s;
+    @include dark-style;
+    @include bg-image-style;
+    @include hover-style;
+  }
+
+  .cool-imac {
+    background-image: url("../Img/3.jpg");
+    grid-area: cool-imac;
+    height: 20vh;
+    position: relative;
+    transition: 0.3s;
+    @include dark-style;
+    @include bg-image-style;
+    @include hover-style;
+  }
+
+  .cool-hacking {
+    background-image: url("../Img/4.jpg");
+    grid-area: cool-hacking;
+    height: 20vh;
+    position: relative;
+    transition: 0.3s;
+    @include dark-style;
+    @include bg-image-style;
+    @include hover-style;
+  }
+
+  .cool-bull {
+    background-image: url("../Img/5.jpg");
+    grid-area: cool-bullshit;
+    height: 20vh;
+    position: relative;
+    transition: 0.3s;
+    @include dark-style;
+    @include bg-image-style;
+    @include hover-style;
+  }
+  .cool-workspace {
+    background-image: url("../Img/6.jpg");
+    grid-area: cool-workspace;
+    /*     grid-column: 4;
+    grid-row: 3/5; */
+    height: 40.5vh;
+    position: relative;
+    transition: 0.3s;
+    @include dark-style;
+    @include bg-image-style;
+    @include hover-style;
+  }
+
+  .cool-notebook {
+    background-image: url("../Img/7.jpg");
+    grid-area: cool-notebook;
+    height: 20vh;
+    position: relative;
+    transition: 0.3s;
+    @include dark-style;
+    @include bg-image-style;
+    @include hover-style;
+  }
+
+  .cool-code {
+    background-image: url("../Img/8.jpg");
+    grid-area: cool-code;
+    height: 20vh;
+    position: relative;
+    transition: 0.3s;
+    @include dark-style;
+    @include bg-image-style;
+    @include hover-style;
+  }
+
+  .cool-timer {
+    background-image: url("../Img/9.jpg");
+    grid-area: cool-timer;
+    height: 20vh;
+    position: relative;
+    transition: 0.3s;
+    @include dark-style;
+    @include bg-image-style;
+    @include hover-style;
+  }
+}
+
+.news {
+  background-color: $bright;
+}
+.news__grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  width: 100%;
+  margin-top: 1rem 0;
+  padding: 2rem;
+}
+
+.news__grid > div {
+  position: relative;
+}
+
+.news__title {
+  max-width: 35rem;
+  max-height: 20rem;
+  padding-right: 2rem;
+
+  &::after {
+    content: "";
+    border-right: 1px solid rgb(158, 0, 0);
+    position: absolute;
+    right: 0;
+    top: -10px;
+    height: 20rem;
+  }
+}
+.news__title > h1 {
+  color: $black;
+  margin-bottom: 1rem;
+}
+.news__title > p {
+  color: gray;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+.news__image {
+  margin: 1rem 0;
+
+  max-width: 35rem;
+  max-height: 20rem;
+}
+.news__image > img {
+  max-width: 35rem;
+  max-height: 20rem;
+}
+
+.subscribe {
+  background-color: $dark;
+  padding: 1rem;
+
+  .subscribe__items {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  input:not([type="button"]) {
+    padding: 0.6rem;
+    border-radius: 4px;
+    background-color: #314853;
+    color: #eee;
+    border-style: none;
+    outline-style: none;
+
+    &:hover,
+    :active {
+      background-color: #eee;
+      color: #3148;
+    }
+  }
+}
+
+.blog {
+  margin: 1rem 0;
+  background-color: rgb(255, 255, 255);
+
+  .blog__title {
+    margin: 2rem 0;
+    font-size: 1.5rem;
+  }
+
+  .blog__items {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+      "item1 item2 item3 item3"
+      "item4 item4 item5 item6";
+    justify-items: center;
+    align-content: center;
+    gap: 10px;
+
+    .blog__img {
+      @include bg-image-style;
+    }
+
+    .blog__text {
+      transition: 0.5s;
+      &:hover,
+      :active {
+        background: #66777f;
+        cursor: pointer;
+        color: #eee;
+      }
+    }
+
+    .blog__text > h3 {
+      padding: 1rem;
+    }
+    .blog__text {
+      text-align: center;
+      align-items: center;
+      background-color: $bright;
+      width: 100%;
+      height: 15rem;
+      color: $gray;
+    }
+
+    .item1 {
+      grid-area: item1;
+      transition: 0.5s;
+      overflow: hidden;
+      > img {
+        width: 100%;
+        height: 28vh;
+      }
+
+      &:hover,
+      :active {
+        cursor: pointer;
+        color: #eee;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    .item2 {
+      grid-area: item2;
+      transition: 0.5s;
+      > img {
+        width: 100%;
+        height: 28vh;
+      }
+      &:hover,
+      :active {
+        cursor: pointer;
+        color: #eee;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    .item3 {
+      grid-area: item3;
+      transition: 0.5s;
+
+      grid-column: 3/5;
+      > img {
+        width: 100%;
+        height: 28vh;
+      }
+      &:hover,
+      :active {
+        cursor: pointer;
+        color: #eee;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    .item4 {
+      grid-area: item4;
+      transition: 0.5s;
+      > img {
+        width: 100%;
+        height: 28vh;
+      }
+      &:hover,
+      :active {
+        cursor: pointer;
+        color: #eee;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    .item5 {
+      grid-area: item5;
+      transition: 0.5s;
+      > img {
+        width: 100%;
+        height: 28vh;
+      }
+      &:hover,
+      :active {
+        cursor: pointer;
+        color: #eee;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    .item6 {
+      grid-area: item6;
+      transition: 0.5s;
+      > img {
+        width: 100%;
+        height: 28vh;
+      }
+      &:hover,
+      :active {
+        cursor: pointer;
+        color: #eee;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+.footer {
+  margin-top: 2rem;
+  background-color: $dark;
+  justify-items: center;
+
+  padding: 2rem;
+  color: $gray;
+
+  h2:nth-child(1) {
+    letter-spacing: 1.2px;
+    margin-bottom: 0.4rem;
+  }
+  h2:nth-child(2) {
+    letter-spacing: 3.9px;
+    text-transform: uppercase;
+    margin-bottom: 1.4rem;
+  }
+  p {
+    font-size: 1.4rem;
+  }
+}
